@@ -1,0 +1,94 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    background-color: black;
+    margin: 0;
+}
+.header{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr ;
+    grid-gap: 15px;
+    text-align: center;
+    /* border-bottom:10px solid;
+    border-image-source: linear-gradient(to right, red,purple);
+    border-image-slice: 1; */
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+/* .content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:15px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+} */
+.propic{
+    width: 100px;
+    height: auto;
+    
+}
+@media screen and (min-width:600px) {
+    .propic{
+        width: 300px;
+        height: 300px;
+        border-radius: 3%;
+        box-shadow: 0px 0px 5px white;
+    }
+}
+.nametext{
+    color: white;
+    font-size: 50px;
+    text-shadow: 0px 0px 3px white;
+    padding-bottom: 5px;
+}
+.blinktxt{
+    animation: blink 5s alternate;
+    color:white;
+    opacity: 65%;
+}
+.put{
+    animation: switch 3s infinite alternate;
+}
+.tha{
+    animation: switch 3s infinite alternate-reverse;
+}
+@keyframes blink{
+    /* 0%{color: red;}
+    20%{color: orangered;}
+    40%{color: limegreen;}
+    60%{color: cyan;}
+    80%{color: blue;}
+    100%{color: violet;} */
+    from{color:black;}
+    to{color:white; opacity: 60%;}
+}
+@keyframes switch{
+    from{color:white; text-shadow: 0px 0px 5px white;}
+    to{color:crimson; text-shadow: 0px 0px 5px crimson;}
+}
+.edu{
+    border: 3px solid;
+    border-image: linear-gradient(to right, red,purple);
+    border-image-slice: 1;
+    padding: 40px;
+    padding-top: 10px;
+}
+.pro{
+    border: 3px solid;
+    border-image: linear-gradient(to left, red,purple);
+    border-image-slice: 1;
+    padding: 40px;
+    padding-top: 10px;
+}
+h2{
+    color: crimson;
+    text-shadow: 0px 0px 5px crimson;
+    opacity: 80%;
+}
+.skill{
+    color:white;
+    border: 3px solid;
+    border-image: linear-gradient(to bottom, red,purple);
+    border-image-slice: 1;
+}

@@ -6,26 +6,33 @@ body{
 }
 .header{
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr ;
+    /* grid-template-columns: 1fr 2fr 1fr ; */
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+            'person'
+            'edu'
+            'profile';
     grid-gap: 15px;
     text-align: center;
-    /* border-bottom:10px solid;
-    border-image-source: linear-gradient(to right, red,purple);
-    border-image-slice: 1; */
     padding-bottom: 20px;
     padding-top: 20px;
 }
-/* .content{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap:15px;
-    text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
-} */
+#row1, #row3 {
+    padding: 10px;
+}
+#row2{
+    display:grid;
+    grid-template-rows: auto auto 0.5fr;
+    padding:10px;
+
+}
 .propic{
     width: 100px;
     height: auto;
+    align-items: center;
+    border-radius: 3%;
+    box-shadow: 0px 0px 5px white;
+    margin-bottom: 20px;
     
 }
 @media screen and (min-width:600px) {
@@ -33,18 +40,19 @@ body{
         width: 300px;
         height: 300px;
         border-radius: 3%;
-        box-shadow: 0px 0px 5px white;
+        box-shadow: 0px 0px 20px grey;
+        align-items: center;
     }
 }
 .nametext{
     color: white;
-    font-size: 50px;
-    text-shadow: 0px 0px 3px white;
+    font-size: 40px;
     padding-bottom: 5px;
 }
-.blinktxt{
+#jobblink{
+    font-size: 20px;
     animation: blink 5s alternate;
-    color:white;
+    color:pink;
     opacity: 65%;
 }
 .put{
@@ -54,14 +62,8 @@ body{
     animation: switch 3s infinite alternate-reverse;
 }
 @keyframes blink{
-    /* 0%{color: red;}
-    20%{color: orangered;}
-    40%{color: limegreen;}
-    60%{color: cyan;}
-    80%{color: blue;}
-    100%{color: violet;} */
     from{color:black;}
-    to{color:white; opacity: 60%;}
+    to{color:pink; text-shadow: 0px 0px 5px pink;}
 }
 @keyframes switch{
     from{color:white; text-shadow: 0px 0px 5px white;}
@@ -86,9 +88,147 @@ h2{
     text-shadow: 0px 0px 5px crimson;
     opacity: 80%;
 }
+.contact{
+    color:white;
+    border: 3px solid;
+    border-image: linear-gradient(to top, red,purple);
+    border-image-slice: 1;
+    padding: 2%;
+    padding-bottom: 0;
+    padding-top:0;
+}
+@media only screen and (max-width:768px){
+    .header{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'person'
+            'edu'
+            'profile';
+    }
+    #row1{
+        grid-area: edu;
+    }
+    #row2{
+        grid-area: person;
+    }
+    #row3{
+        grid-area: profile;
+    }
+    .body{
+        text-align: center;
+    }
+}
+#telicon{
+    animation: telblink 3s infinite alternate;
+    font-size: 30px;
+}
+#emailicon{
+    animation: emailblink 3s infinite alternate;
+    font-size: 30px;
+}
+#pinicon{
+    animation: pinblink 3s infinite alternate;
+    font-size: 30px;
+}
+#teltext{
+    animation: telblink 3s infinite alternate;
+    font-size: 20px;
+}
+#emailtext{
+    animation: emailblink 3s infinite alternate;
+    font-size: 20px;
+}
+#pintext{
+    animation: pinblink 3s infinite alternate;
+    font-size: 20px;
+}
+#facebook{
+    animation: pinblink 3s infinite alternate;
+    font-size: 30px;
+}
+#instagram{
+    animation: pinblink 3s infinite alternate;
+    font-size: 30px;
+}
+#line{
+    animation: pinblink 3s infinite alternate;
+    font-size: 30px;
+}
+@keyframes pinblink{
+    from{color: crimson; text-shadow: 0px 0px 15px crimson;}
+    to{color: white; text-shadow: 0px 0px 15px white;}
+}
+@keyframes telblink{
+    from{color: skyblue; text-shadow: 0px 0px 15px black;}
+    to{color: white; text-shadow: 0px 0px 15px white;}
+}
+@keyframes emailblink{
+    from{color: lightgreen; text-shadow: 0px 0px 15px lightgreen;}
+    to{color: white; text-shadow: 0px 0px 15px white;}
+}
 .skill{
+    display:grid;
+    grid-template-rows: 1fr;
+}
+.skill-content{
+    text-align: center;
     color:white;
     border: 3px solid;
     border-image: linear-gradient(to bottom, red,purple);
     border-image-slice: 1;
+}
+#skillicon{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+    margin:15px;
+    font-size:40px;
+}
+#html{
+    color: orangered;
+    animation: html-b 2s infinite alternate-reverse;
+}
+@keyframes html-b {
+    from{color: orangered;}
+    to{color:white;}
+}
+#css{
+    color: blue;
+    animation: css-b 2s infinite alternate-reverse;
+}
+@keyframes css-b {
+    from{color:blue;}
+    to{color:white;}
+}
+#js{
+    color: yellow;
+    animation: js-b 2s infinite alternate-reverse;
+}
+@keyframes js-b {
+    from{color:yellow;}
+    to{color:white;}
+}
+#angular{
+    color: red;
+    animation: angular-b 2s infinite alternate-reverse;
+}
+@keyframes angular-b {
+    from{color:red;}
+    to{color:white;}
+}
+#java{
+    color: grey;
+    animation: java-b 2s infinite alternate-reverse;
+}
+@keyframes java-b {
+    from{color:grey;}
+    to{color:white;}
+}
+#python{
+    color: deepskyblue;
+    animation: python-b 2s infinite alternate-reverse;
+}
+@keyframes python-b {
+    from{color:deepskyblue;}
+    to{color:wheat;}
 }

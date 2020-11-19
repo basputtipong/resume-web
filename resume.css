@@ -1,12 +1,19 @@
+@font-face{
+    font-family: neon3D;
+    src: url("mexcellent 3d.ttf");
+    font-family: neon;
+    src: url("mexcellent\ rg.ttf");
+
+}
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: neon3D;
     margin: 20px;
-    background-color: black;
+    background: url("brick-wall.jpg") no-repeat center fixed;
+    background-size: 100% 100%;
     margin: 0;
 }
 .header{
     display: grid;
-    /* grid-template-columns: 1fr 2fr 1fr ; */
     grid-template-columns: 1fr;
     grid-template-areas: 
             'person'
@@ -17,21 +24,18 @@ body{
     padding-bottom: 20px;
     padding-top: 20px;
 }
-#row1, #row3 {
-    padding: 10px;
-}
-#row2{
+#row1, #row2, #row3 {
     display:grid;
-    grid-template-rows: auto auto 0.5fr;
-    padding:10px;
-
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 10px;
 }
 .propic{
     width: 100px;
     height: auto;
     align-items: center;
     border-radius: 3%;
-    box-shadow: 0px 0px 5px white;
+    box-shadow: 0px 0px 10px white;
     margin-bottom: 20px;
     
 }
@@ -40,61 +44,63 @@ body{
         width: 300px;
         height: 300px;
         border-radius: 3%;
-        box-shadow: 0px 0px 20px grey;
+        box-shadow: 0px 0px 20px black;
         align-items: center;
     }
 }
-.nametext{
-    color: white;
-    font-size: 40px;
+.nametext {
+    grid-column-start: 2;
+    color:white; text-shadow: 10px 10px 10px white;
     padding-bottom: 5px;
 }
 #jobblink{
     font-size: 20px;
-    animation: blink 5s alternate;
-    color:pink;
-    opacity: 65%;
+    animation: blink 5s alternate infinite;
+    text-shadow: 10px 10px 10px gold;
+    color:gold;
 }
-.put{
-    animation: switch 3s infinite alternate;
-}
-.tha{
-    animation: switch 3s infinite alternate-reverse;
+.put, .tha{
+    font-family: neon;
+    animation: switch 1s infinite alternate;
 }
 @keyframes blink{
-    from{color:black;}
-    to{color:pink; text-shadow: 0px 0px 5px pink;}
+    from{color:black;text-shadow: 5px 5px 15px black;}
+    to{color:gold; text-shadow: 5px 5px 15px gold;}
 }
 @keyframes switch{
-    from{color:white; text-shadow: 0px 0px 5px white;}
-    to{color:crimson; text-shadow: 0px 0px 5px crimson;}
+    0%{color:black; text-shadow: 10px 10px 10px white;}
+    20%{color:rgb(0, 102, 255); text-shadow: 10px 10px 10px white;}
+    30%{color:deeppink; text-shadow: 10px 10px 10px white;}
+    50%{color:white; text-shadow: 10px 10px 10px white;}
 }
 .edu{
+    grid-column-start: 2;
     border: 3px solid;
-    border-image: linear-gradient(to right, red,purple);
+    border-image: linear-gradient(to right, deeppink,deepskyblue);
     border-image-slice: 1;
     padding: 40px;
     padding-top: 10px;
 }
 .pro{
+    grid-column-start: 2;
     border: 3px solid;
-    border-image: linear-gradient(to left, red,purple);
+    border-image: linear-gradient(to left, deeppink,deepskyblue);
     border-image-slice: 1;
     padding: 40px;
     padding-top: 10px;
 }
 h2{
-    color: crimson;
-    text-shadow: 0px 0px 5px crimson;
-    opacity: 80%;
+    font-family: neon;
+    color: deeppink;
+    text-shadow: 2px 2px 10px deeppink;
+    font-size: 30px;
 }
 .contact{
     color:white;
     border: 3px solid;
-    border-image: linear-gradient(to top, red,purple);
+    border-image: linear-gradient(to bottom, deeppink,deepskyblue);
     border-image-slice: 1;
-    padding: 2%;
-    padding-bottom: 0;
+    padding: 40px;
     padding-top:0;
 }
 @media only screen and (max-width:768px){
@@ -120,62 +126,67 @@ h2{
     }
 }
 #telicon{
-    animation: telblink 3s infinite alternate;
+    animation: telblink 2s infinite alternate;
     font-size: 30px;
 }
 #emailicon{
-    animation: emailblink 3s infinite alternate;
+    animation: emailblink 2s infinite alternate;
     font-size: 30px;
 }
-#pinicon{
-    animation: pinblink 3s infinite alternate;
-    font-size: 30px;
-}
+
 #teltext{
-    animation: telblink 3s infinite alternate;
-    font-size: 20px;
+    animation: telblink 2s infinite alternate;
+    font-size: 16px;
 }
 #emailtext{
-    animation: emailblink 3s infinite alternate;
-    font-size: 20px;
+    animation: emailblink 2s infinite alternate;
+    font-size: 16px;
 }
-#pintext{
-    animation: pinblink 3s infinite alternate;
-    font-size: 20px;
-}
+
 #facebook{
-    animation: pinblink 3s infinite alternate;
+    animation: faceblink 2s infinite alternate;
     font-size: 30px;
 }
 #instagram{
-    animation: pinblink 3s infinite alternate;
+    animation: instablink 2s infinite alternate;
     font-size: 30px;
 }
-#line{
-    animation: pinblink 3s infinite alternate;
-    font-size: 30px;
+#facebooktext{
+    animation: faceblink 2s infinite alternate;
+    font-size: 16px;
 }
-@keyframes pinblink{
-    from{color: crimson; text-shadow: 0px 0px 15px crimson;}
-    to{color: white; text-shadow: 0px 0px 15px white;}
+#instagramtext{
+    animation: instablink 2s infinite alternate;
+    font-size: 16px;
 }
 @keyframes telblink{
-    from{color: skyblue; text-shadow: 0px 0px 15px black;}
+    from{color: gold; text-shadow: 0px 0px 15px gold;}
     to{color: white; text-shadow: 0px 0px 15px white;}
 }
 @keyframes emailblink{
     from{color: lightgreen; text-shadow: 0px 0px 15px lightgreen;}
     to{color: white; text-shadow: 0px 0px 15px white;}
 }
+@keyframes faceblink{
+    from{color: deepskyblue; text-shadow: 0px 0px 15px deepskyblue;}
+    to{color: white; text-shadow: 0px 0px 15px white;}
+}
+@keyframes instablink{
+    from{color: deeppink; text-shadow: 0px 0px 15px deeppink;}
+    to{color: white; text-shadow: 0px 0px 15px white;}
+}
 .skill{
     display:grid;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr;
+    margin-bottom: 15px;
 }
 .skill-content{
+    grid-column-start: 2;
     text-align: center;
     color:white;
     border: 3px solid;
-    border-image: linear-gradient(to bottom, red,purple);
+    border-image: linear-gradient(to top, deeppink,deepskyblue);
     border-image-slice: 1;
 }
 #skillicon{
@@ -231,4 +242,17 @@ h2{
 @keyframes python-b {
     from{color:deepskyblue;}
     to{color:wheat;}
+}
+table{
+    text-align: center;
+    width: 100%;
+}
+li{
+    color:white;
+    animation: liblink 5s infinite alternate;
+    text-shadow: 2px 2px 12px white;
+}
+@keyframes liblink{
+    from{color:white;text-shadow: 2px 2px 12px white;}
+    to{color:gold;text-shadow: 2px 2px 12px gold;}
 }
